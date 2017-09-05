@@ -20,14 +20,7 @@ class MainController extends Controller
             }
         }
         return response("", 200);*/
-
-
-        $data = $request->all();
-
-        //get the user’s id
-        $id = $data["entry"][0]["messaging"][0]["sender"]["id"];
-
-        $this->sendTextMessage($id, "Hello");
+        return response("Hello", 200);
     }
 
 }
