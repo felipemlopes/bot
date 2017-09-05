@@ -11,7 +11,7 @@ class MainController extends Controller
 {
     public function receive(Request $request)
     {
-        $entries = Entry::getEntries($request);
+        /*$entries = Entry::getEntries($request);
         Log::info(print_r($entries, true));
         foreach ($entries as $entry) {
             $messagings = $entry->getMessagings();
@@ -19,7 +19,15 @@ class MainController extends Controller
                 dispatch(new BotHandler($messaging));
             }
         }
-        return response("", 200);
+        return response("", 200);*/
+
+
+        $data = $request->all();
+
+        //get the user’s id
+        $id = $data["entry"][0]["messaging"][0]["sender"]["id"];
+
+        $this->sendTextMessage($id, "Hello");
     }
 
 }
