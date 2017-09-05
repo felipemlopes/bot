@@ -19,7 +19,7 @@ class MainController extends Controller
                 dispatch(new BotHandler($messaging));
             }
         }
-        return response("", 200);
+        return response("OI teste", 200);
         //return response("Hello", 200);
     }
 
